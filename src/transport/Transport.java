@@ -1,6 +1,6 @@
 package transport;
 
-public abstract class Transport<T extends  Driver> implements Competing{
+public abstract class Transport <T extends  Driver> implements Competing {
 
     private String brend;
     private String model;
@@ -58,6 +58,7 @@ public abstract class Transport<T extends  Driver> implements Competing{
     public abstract void stop();
     public abstract void getType();
     public abstract void  printType();
+    public abstract void passDiagnostics () throws TransportTypeException;
 
     @Override
     public String toString() {

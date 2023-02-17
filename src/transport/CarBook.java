@@ -1,7 +1,7 @@
 package transport;
 
 public class CarBook {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws TransportTypeException{
         Category_driverB driverCar1 = new Category_driverB("Толстов.И.Б", true, 7);
         Category_driverB driverCar2 = new Category_driverB("Прохоров.А.С", true, 18);
         Category_driverB driverCar3 = new Category_driverB("Окунев.С.Ю", true, 40);
@@ -53,13 +53,13 @@ public class CarBook {
         System.out.println(busCapacity1.toString());
         System.out.println(track1.getTrackType());
         track1.printType();
-
+        track1.passDiagnostics();
+        bus3.passDiagnostics();
 
     }
 
     public static void  allRacer(Transport<?> transport){
         System.out.println("водитель "+ transport.getDriver().getFullName()+ " управляет автомобилем "+transport.getBrend()+ " "+ transport.getModel()+" и будет участвовать в заезде");
-
     }
 }
 
