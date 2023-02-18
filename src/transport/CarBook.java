@@ -1,7 +1,7 @@
 package transport;
 
 public class CarBook {
-    public static void main(String[] args) throws TransportTypeException{
+    public static void main(String[] args) {
         Category_driverB driverCar1 = new Category_driverB("Толстов.И.Б", true, 7);
         Category_driverB driverCar2 = new Category_driverB("Прохоров.А.С", true, 18);
         Category_driverB driverCar3 = new Category_driverB("Окунев.С.Ю", true, 40);
@@ -53,8 +53,16 @@ public class CarBook {
         System.out.println(busCapacity1.toString());
         System.out.println(track1.getTrackType());
         track1.printType();
-        track1.passDiagnostics();
-        bus3.passDiagnostics();
+        try {
+            track1.passDiagnostics();
+        } catch (TransportTypeException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            bus3.passDiagnostics();
+        } catch (TransportTypeException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
