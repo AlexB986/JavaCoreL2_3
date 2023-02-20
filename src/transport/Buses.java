@@ -45,7 +45,10 @@ public class Buses extends Transport<Category_driverD> {
     public void getType() {
 
     }
-
+    @Override
+    public void passDiagnostics() throws TransportTypeException {
+        System.out.println("Автобусы диагностику проходить не должны");
+    }
 
     public void printType() {
         if (type == null) {

@@ -48,6 +48,12 @@ public class Tracks extends Transport<Category_driverC> {
     }
 
     @Override
+    public void passDiagnostics() throws TransportTypeException {
+        System.out.println("Пройти грузовикам диагностику");
+
+    }
+
+    @Override
     public void printType() {
         if (type == null) {
             System.out.println("Данных по транспортному средству недостаточно");

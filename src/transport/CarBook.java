@@ -53,13 +53,21 @@ public class CarBook {
         System.out.println(busCapacity1.toString());
         System.out.println(track1.getTrackType());
         track1.printType();
-
+        try {
+            track1.passDiagnostics();
+        } catch (TransportTypeException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            bus3.passDiagnostics();
+        } catch (TransportTypeException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
     public static void  allRacer(Transport<?> transport){
         System.out.println("водитель "+ transport.getDriver().getFullName()+ " управляет автомобилем "+transport.getBrend()+ " "+ transport.getModel()+" и будет участвовать в заезде");
-
     }
 }
 

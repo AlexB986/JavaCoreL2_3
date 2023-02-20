@@ -48,6 +48,11 @@ public class Cars extends Transport<Category_driverB> {
     public void getType() {
 
     }
+    @Override
+    public void passDiagnostics()throws TransportTypeException{
+        System.out.println("Пройти легковым диагностику");
+
+    }
 
     public void printType() {
         if (type == null) {
