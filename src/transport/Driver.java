@@ -1,7 +1,7 @@
 package transport;
 
 
-public class Driver{
+public class Driver {
     private String fullName;
     private boolean drivingLicense;
     private int experience;

@@ -1,11 +1,13 @@
 package transport;
 
 
+import java.util.List;
+
 public class Cars extends Transport<Category_driverB> {
     public CarBody type;
 
-    public Cars(String brend, String model, double engineValue, Category_driverB driver, CarBody type) {
-        super(brend, model, engineValue, driver);
+    public Cars(String brend, String model, double engineValue, Category_driverB driver, CarBody type, List<Mechanic> mechanics) {
+        super(brend, model, engineValue, driver, mechanics);
         this.type = type;
     }
 
@@ -49,7 +51,7 @@ public class Cars extends Transport<Category_driverB> {
 
     }
     @Override
-    public void passDiagnostics()throws TransportTypeException{
+    public void passDiagnostics(){
         System.out.println("Пройти легковым диагностику");
 
     }

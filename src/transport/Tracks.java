@@ -1,14 +1,14 @@
 package transport;
 
+import java.util.List;
+
 public class Tracks extends Transport<Category_driverC> {
     private LoadCapacity type;
 
-    public Tracks(String brend, String model, double engineValue, Category_driverC driver, LoadCapacity type) {
-        super(brend, model, engineValue, driver);
+    public Tracks(String brend, String model, double engineValue, Category_driverC driver, LoadCapacity type, List<Mechanic> mechanics) {
+        super(brend, model, engineValue, driver, mechanics);
         this.type = type;
-
     }
-
 
     public LoadCapacity getTrackType() {
         return this.type;
@@ -48,7 +48,7 @@ public class Tracks extends Transport<Category_driverC> {
     }
 
     @Override
-    public void passDiagnostics() throws TransportTypeException {
+    public void passDiagnostics()  {
         System.out.println("Пройти грузовикам диагностику");
 
     }
