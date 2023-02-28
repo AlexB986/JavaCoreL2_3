@@ -6,10 +6,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class ServiceStation<T extends Transport> {
+public class ServiceStation {
     public static Queue queue = new LinkedList<>();
     private List<Transport> allTransport;
-    private T transport;
+    private Transport transport;
 
 
     public ServiceStation(List<Transport> allTransport) {
@@ -22,9 +22,8 @@ public class ServiceStation<T extends Transport> {
 
     }
 
-    public Queue<Transport> printAddCarToQueue(T transport) {
-        queue.add(transport);
-        return null;
+    public void printAddCarToQueue(Transport transport) {
+          queue.add(transport);
     }
 
     public void carryOutVehicleInspection() {

@@ -104,19 +104,42 @@ public class CarBook {
 
         ServiceStation serviceStation = new ServiceStation();
 
-        for (Transport element : allTransport)
+//        for (Transport element : allTransport)
+//            if (element.getClass()!= Buses.class) {
+//                serviceStation.printAddCarToQueue(element);
+//            }
+//        System.out.println("добавлены авто в очередь");
+//        System.out.println(ServiceStation.queue);
+//        serviceStation.carryOutVehicleInspection();
+//
+//
+//        for (Transport element : allTransport)
+//            try {
+//                element.passDiagnostics();
+//                serviceStation.printAddCarToQueue(element);
+//            } catch (TransportTypeException e) {
+//            }
+//        System.out.println(ServiceStation.queue);
+//    }
+
+
+       for (Transport element : allTransport)
             if (element.getClass()!= Buses.class) {
-                serviceStation.printAddCarToQueue(element);
-            }
+                try {
+                    element.passDiagnostics();
+                    serviceStation.printAddCarToQueue(element);
+                } catch (TransportTypeException e) {
+                }
+        serviceStation.printAddCarToQueue(element);
+    }
         System.out.println("добавлены авто в очередь");
         System.out.println(ServiceStation.queue);
         serviceStation.carryOutVehicleInspection();
 
 
+}
 
 
-
-    }
 
 
     public static void mechanikcTransport(Transport<?> transport) {
