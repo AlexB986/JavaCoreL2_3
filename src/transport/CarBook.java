@@ -1,9 +1,6 @@
 package transport;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class CarBook {
     public static void main(String[] args) {
@@ -104,43 +101,16 @@ public class CarBook {
 
         ServiceStation serviceStation = new ServiceStation();
 
-//        for (Transport element : allTransport)
-//            if (element.getClass()!= Buses.class) {
-//                serviceStation.printAddCarToQueue(element);
-//            }
-//        System.out.println("добавлены авто в очередь");
-//        System.out.println(ServiceStation.queue);
-//        serviceStation.carryOutVehicleInspection();
-//
-//
-//        for (Transport element : allTransport)
-//            try {
-//                element.passDiagnostics();
-//                serviceStation.printAddCarToQueue(element);
-//            } catch (TransportTypeException e) {
-//            }
-//        System.out.println(ServiceStation.queue);
-//    }
-
-
-       for (Transport element : allTransport)
-            if (element.getClass()!= Buses.class) {
-                try {
-                    element.passDiagnostics();
-                    serviceStation.printAddCarToQueue(element);
-                } catch (TransportTypeException e) {
-                }
-        serviceStation.printAddCarToQueue(element);
-    }
+        for (Transport element : allTransport){
+            serviceStation.AddCarToQueue(element);
+            }
         System.out.println("добавлены авто в очередь");
         System.out.println(ServiceStation.queue);
         serviceStation.carryOutVehicleInspection();
 
 
-}
 
-
-
+    }
 
     public static void mechanikcTransport(Transport<?> transport) {
         System.out.println("Водитель " + transport.getDriver().getFullName() + " Имя механика " + transport.getMechanics().get(1).getName() + " , " + transport.getMechanics().get(1).getName());
