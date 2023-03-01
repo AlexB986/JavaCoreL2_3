@@ -5,10 +5,8 @@ import java.util.Queue;
 
 public class ServiceStation {
     public static Queue<Transport> queue = new LinkedList<>();
-    private Transport transport;
 
     public ServiceStation() {
-        this.transport = transport;
 
     }
 
@@ -27,7 +25,7 @@ public class ServiceStation {
 
             }
         }
-        System.out.println(""+queue.poll());
+        System.out.println("Удаление из очереди "+queue.poll());
     }
 }
 
