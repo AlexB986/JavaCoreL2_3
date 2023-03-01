@@ -108,10 +108,10 @@ public class CarBook {
         System.out.println(ServiceStation.queue);
         serviceStation.carryOutVehicleInspection();
 
-        Map<String, List<Transport>> carsMap = new HashMap<>();
+        Map<Transport, List<Transport>> carsMap = new HashMap<>();
         for (Transport element : allTransport) {
 
-            carsMap.put(element.getBrend(), element.getMechanics());
+            carsMap.put(element, element.getMechanics());
 
         }
 
