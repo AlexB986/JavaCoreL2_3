@@ -10,7 +10,7 @@ public class CarBook {
         Category_driverB driverCar4 = new Category_driverB("Ветров.И.Е", true, 1);
 
         Category_driverC driverTracks1 = new Category_driverC("Бабков.А.М", true, 26);
-        Category_driverC driverTracks2 = new Category_driverC("Тютчев.А.П", true, 14);
+        Category_driverC driverTracks2 = new Category_driverC("Толстов.И.Б", true, 14);
         Category_driverC driverTracks3 = new Category_driverC("Ткачев.Е.В", true, 30);
         Category_driverC driverTracks4 = new Category_driverC("Романов.С.Г", true, 12);
 
@@ -101,13 +101,35 @@ public class CarBook {
 
         ServiceStation serviceStation = new ServiceStation();
 
-        for (Transport element : allTransport){
+        for (Transport element : allTransport) {
             serviceStation.AddCarToQueue(element);
-            }
+        }
         System.out.println("добавлены авто в очередь");
         System.out.println(ServiceStation.queue);
         serviceStation.carryOutVehicleInspection();
 
+        Map<String, List<Transport>> carsMap = new HashMap<>();
+        for (Transport element : allTransport) {
+
+            carsMap.put(element.getBrend(), element.getMechanics());
+
+        }
+
+        for (Map.Entry m : carsMap.entrySet())
+            System.out.println("Автомобиль " + m.getKey() + " Механики " + m.getValue());
+
+
+        Set<String> drivers = new HashSet<>();
+
+        for (Transport element : allTransport) {
+            drivers.add(element.getDriver().getFullName());
+        }
+        System.out.println(drivers);
+
+        Iterator<String>iterDriver = drivers.iterator();
+        while (iterDriver.hasNext()){
+            System.out.println(iterDriver.next());
+        }
 
 
     }
