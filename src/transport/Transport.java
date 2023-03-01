@@ -1,17 +1,24 @@
 package transport;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Transport <T extends  Driver> implements Competing {
 
     private String brend;
     private String model;
     private double engineValue;
     private T driver;
-    public Transport(String brend,String model,double engineValue,T driver){
+    private List<Mechanic>mechanics=new ArrayList<>();
+
+    public Transport(String brend, String model, double engineValue, T driver, List<Mechanic> mechanics) {
         this.brend = brend;
         this.model = model;
         this.engineValue = engineValue;
-        setDriver(driver);
+        this.driver = driver;
+        this.mechanics = mechanics;
     }
+
     public String getBrend() {
         return this.brend;
     }
@@ -45,6 +52,14 @@ public abstract class Transport <T extends  Driver> implements Competing {
         this.engineValue = engineValue;
     }
 
+    public List<Mechanic> getMechanics() {
+        return mechanics;
+    }
+
+    public void setMechanics(List<Mechanic> mechanics) {
+        this.mechanics = mechanics;
+    }
+
     public T getDriver() {
         return driver;
     }
@@ -60,12 +75,17 @@ public abstract class Transport <T extends  Driver> implements Competing {
     public abstract void  printType();
     public abstract void passDiagnostics () throws TransportTypeException;
 
+
+
     @Override
     public String toString() {
         return "Transport{" +
-                "brend ='" + brend + '\'' +
+                "brend='" + brend + '\'' +
                 ", model='" + model + '\'' +
                 ", engineValue=" + engineValue +
+                ", driver=" + driver +
+                ", mechanics=" + mechanics +
                 '}';
     }
 }
+
