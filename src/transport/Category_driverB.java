@@ -20,5 +20,7 @@ public class Category_driverB  extends Driver{
     public void refuel() {
         System.out.println("Заправляюсь "+getFullName());
     }
+
+
 }
 

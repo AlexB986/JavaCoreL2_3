@@ -1,6 +1,7 @@
 package transport;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Tracks extends Transport<Category_driverC> {
     private LoadCapacity type;
@@ -61,4 +62,17 @@ public class Tracks extends Transport<Category_driverC> {
         type.toString();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Tracks tracks = (Tracks) o;
+        return type == tracks.type;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), type);
+    }
 }

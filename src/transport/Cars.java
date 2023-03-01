@@ -2,6 +2,7 @@ package transport;
 
 
 import java.util.List;
+import java.util.Objects;
 
 public class Cars extends Transport<Category_driverB> {
     public CarBody type;
@@ -61,5 +62,19 @@ public class Cars extends Transport<Category_driverB> {
             System.out.println("Данных по транспортному средству недостаточно");
         }
         type.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Cars cars = (Cars) o;
+        return type == cars.type;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), type);
     }
 }

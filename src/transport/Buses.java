@@ -2,6 +2,7 @@ package transport;
 
 
 import java.util.List;
+import java.util.Objects;
 
 public class Buses extends Transport<Category_driverD> {
     public BusCapacity type;
@@ -59,5 +60,18 @@ public class Buses extends Transport<Category_driverD> {
         type.toString();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Buses buses = (Buses) o;
+        return type == buses.type;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), type);
+    }
 }
 

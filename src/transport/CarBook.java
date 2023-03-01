@@ -119,14 +119,14 @@ public class CarBook {
             System.out.println("Автомобиль " + m.getKey() + " Механики " + m.getValue());
 
 
-        Set<String> drivers = new HashSet<>();
+        Set<Driver> drivers = new HashSet<>();
 
         for (Transport element : allTransport) {
-            drivers.add(element.getDriver().getFullName());
+            drivers.add(element.getDriver());
         }
         System.out.println(drivers);
 
-        Iterator<String>iterDriver = drivers.iterator();
+        Iterator<Driver>iterDriver = drivers.iterator();
         while (iterDriver.hasNext()){
             System.out.println(iterDriver.next());
         }
